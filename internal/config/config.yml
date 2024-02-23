@@ -1,0 +1,50 @@
+grpc:
+  port: :9102
+  development: true
+
+elasticsearch:
+  addresses: ["http://localhost:9200"]
+
+jaeger:
+  enable: false
+  serviceName: reader_service
+  hostPort: "localhost:6831"
+  logSpans: false
+
+kafkaTopics:
+  createOrder:
+    topicName: 7kzu_create_order
+    partitions: 12
+    replicationFactor: 1
+  updateOrder:
+    topicName: 7kzu_update_order
+    partitions: 12
+    replicationFactor: 1
+redis:
+  RedisAddr: localhost:6379
+  RedisPassword:
+  RedisDb: 0
+  RedisDefaultdb: 0
+  MinIdleConns: 200
+  PoolSize: 12000
+  PoolTimeout: 240
+  Password: ""
+  DB: 0
+
+
+kafka:
+  brokers: [ "localhost:29092" ]
+  groupID: writer_microservice_consumer
+  initTopics: true
+
+prometheus:
+  port: :3200
+  path: /metrics
+
+postgres:
+  host: localhost
+  port: 5432
+  user: postgres
+  dbName: 7kzu_order
+  sslModel: false
+  password: 12345
